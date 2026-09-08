@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import {
+  MSP_PER_QUINTAL,
   seedState,
   STATUS_LABEL,
   type AppState,
@@ -61,6 +62,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           ? {
               ...b,
               status,
+              amount:
+                status === "procured" || b.amount != null
+                  ? b.quantityQuintal * MSP_PER_QUINTAL[b.crop]
+                  : null,
               timeline: [
                 ...b.timeline,
                 {
