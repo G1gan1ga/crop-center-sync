@@ -34,8 +34,8 @@ export function Card({
   children,
   action,
 }: {
-  title?: string;
-  description?: string;
+  title?: string | undefined;
+  description?: string | undefined;
   children: ReactNode;
   action?: ReactNode;
 }) {
