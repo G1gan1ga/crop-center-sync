@@ -146,7 +146,7 @@ function Dashboard() {
             </Card>
           )}
 
-          <Card title="Notifications" description="SMS alerts sent to {phone}".replace("{phone}", "") ? undefined : undefined}>
+          <Card title="Notifications" description={`SMS alerts sent to ${farmer.phone}`}>
             <ul className="space-y-3 text-sm">
               {[...mine]
                 .flatMap((b) => b.timeline.map((t) => ({ ...t, token: b.token })))

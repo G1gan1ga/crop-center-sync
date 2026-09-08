@@ -44,8 +44,6 @@ const FILTER_LABEL: Record<Filter, string> = {
   payment: "Payment pending",
 };
 
-export default function noop() {}
-
 function AdminPage() {
   const { state, updateStatus } = useStore();
   const [centreId, setCentreId] = useState(CENTRES[0]!.id);
